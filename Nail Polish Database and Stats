@@ -1,0 +1,28 @@
+--Create a table for nail polish being sold
+
+CREATE TABLE nail_polish (id INTEGER PRIMARY KEY, color TEXT, name TEXT, brand TEXT, cost INTEGER, stock INTEGER);
+
+INSERT into nail_polish VALUES (1, 'pink', 'bubble bath', 'OPI', 12, 2);
+INSERT into nail_polish VALUES (2, 'pink', 'pillow talk the talk', 'Essie', 10, 5);
+INSERT into nail_polish VALUES (3, 'pink', 'pink sapphire', 'Sally Henson', 7, 4);
+INSERT into nail_polish VALUES (4, 'blue', 'kiss me at midnight', 'OPI', 12, 6);
+INSERT into nail_polish VALUES (5, 'blue', 'wishing on a star', 'Essie', 8, 9);
+INSERT into nail_polish VALUES (6, 'blue', 'salt water happy', 'Essie', 8, 3);
+INSERT into nail_polish VALUES (7, 'blue', 'natural spring', 'Sally Hansen', 7, 5);
+INSERT into nail_polish VALUES (8, 'green', 'gelato on my mind', 'OPI', 7, 3);
+INSERT into nail_polish VALUES (9, 'yellow', 'sunny business', 'Essie', 5, 8);
+INSERT into nail_polish VALUES (10, 'white', 'waltz', 'Essie', 8, 2);
+INSERT into nail_polish VALUES (11, 'purple', 'lavender haze', 'Sally Henson', 6, 6);
+INSERT into nail_polish VALUES (12, 'purple', 'bikini boardroom', 'OPI', 7, 2);
+INSERT into nail_polish VALUES (13, 'orange', 'dont kid yourself', 'Essie', 8, 5);
+INSERT into nail_polish VALUES (14, 'orange', 'carrot cake', 'Sally Hansen', 8, 6);
+INSERT into nail_polish VALUES (15, 'red', 'rooting for you', 'Essie', 9, 9);
+
+--Display the data ordered by cost
+SELECT * FROM nail_polish ORDER BY cost DESC;
+
+--What nail polish is pink and by OPI?
+SELECT * FROM nail_polish WHERE color = 'pink' AND brand = 'OPI';
+
+--How many items are left in stock?
+SELECT SUM(stock) FROM nail_polish;
