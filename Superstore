@@ -34,15 +34,17 @@ FROM superstore
 ORDER BY price DESC;
 
 #Show a statistic about the item prices.
-SELECT avg(price)
-FROM superstore;
+SELECT SUM (price)
+FROM superstore
+WHERE stock_quantity < 50;
 
 #Show a statistic about the price for items in the category of "Kitchen Supplies". 
-SELECT SUM(price)
+SELECT AVG (price)
 FROM superstore
 WHERE category = 'Kitchen Supplies';
 
 #Show the item name, average rating, and price of all items less than $90. Order by descending average rating.
-SELECT item_name, average_rating, price FROM superstore
+SELECT item_name, average_rating, price 
+FROM superstore
 WHERE price < 90
 ORDER BY average_rating DESC;
